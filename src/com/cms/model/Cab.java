@@ -53,6 +53,11 @@ public class Cab  implements Comparable<Cab>{
 		return this.currentCity;
 	}
 	
+	
+	public void setCurrentCity(City currentCity) {
+		this.currentCity = currentCity;
+	}
+
 	@Override
 	public int compareTo(Cab cab) {
 		

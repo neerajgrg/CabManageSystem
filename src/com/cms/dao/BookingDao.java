@@ -1,26 +1,16 @@
 package com.cms.dao;
 
-import java.util.PriorityQueue;
-import java.util.Set;
-
-import com.cms.model.Cab;
-import com.cms.model.City;
+import com.cms.model.Booking;
 
 public class BookingDao {
 
-	CarDB carDB;
-	public BookingDao(CarDB carDB) {
-		this.carDB = carDB;
-	}
+	CmsDB cmsDB;
 	
-	public boolean isServiceableCity(City city) {
-		Set<City> st = carDB.getServiceableCities();
-		return st.contains(city);
+	public BookingDao(CmsDB cmsDB) {
+		this.cmsDB = cmsDB;
 	}
-
-	public PriorityQueue<Cab> getCabsInCity(City bookingCity) {
-		return carDB.getCabList(bookingCity);
-		
+     
+	public void addBooking(Booking booking) {
+		cmsDB.getBookingList().add(booking);
 	}
-
 }

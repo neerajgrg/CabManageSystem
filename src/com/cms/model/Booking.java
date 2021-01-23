@@ -2,22 +2,39 @@ package com.cms.model;
 
 public class Booking {
 	
-	private Cab cab;
-	private User user;
-	private static int bookingId;
+	private int cabID;
+	private int userID;
+	private int bookingId;
 	private int cabId;
-	private int customerId;
 	private int billingAmount;
 	
+	public Booking(int cabID, int userID) {
+		this.cabId = cabID;
+		this.userID = userID;
+	}
 	
-	
-	public static int getBookingId() {
+	public  int getBookingId() {
 		return bookingId;
 	}
 
+	public int getCabID() {
+		return cabID;
+	}
+
+	public void setCabID(int cabID) {
+		this.cabID = cabID;
+	}
+
+	public int getUserID() {
+		return userID;
+	}
+
+	public void setUserID(int userID) {
+		this.userID = userID;
+	}
 
 	public void setBookingId(int bookingId) {
-		Booking.bookingId = bookingId;
+		this.bookingId = bookingId;
 	}
 
 	public int getCabId() {
@@ -28,17 +45,6 @@ public class Booking {
 	public void setCabId(int cabId) {
 		this.cabId = cabId;
 	}
-
-
-	public int getCustomerId() {
-		return customerId;
-	}
-
-
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
-
 
 	public int getBillingAmount() {
 		return billingAmount;
